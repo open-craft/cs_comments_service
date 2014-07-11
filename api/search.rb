@@ -26,6 +26,8 @@ get "#{APIPREFIX}/search/threads" do
     per_page = (params["per_page"] || DEFAULT_PER_PAGE).to_i
     # for multi commentable searching
     params["commentable_ids"] = params["commentable_ids"].split(',') if params["commentable_ids"]
+    params["group_ids"] = params["group_ids"].split(',') if params["group_ids"]
+
     options = {
       sort_key: sort_key,
       sort_order: sort_order,

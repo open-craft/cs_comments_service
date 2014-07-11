@@ -105,10 +105,14 @@ class CommentThread < Content
     search.filter(:terms, commentable_id: params["commentable_ids"]) if params["commentable_ids"]
     search.filter(:term, course_id: params["course_id"]) if params["course_id"]
 
-    if params["group_id"]
+    group_ids = []
+    group_ids.concat(params["group_ids"]) if params["group_ids"]
+    group_ids << params["group_id"] if params["group_id"]
+
+    if not group_ids.empty?
       search.filter :or, [
         {:not => {:exists => {:field => :group_id}}},
-        {:term => {:group_id => params["group_id"]}}
+        {:terms => {:group_id => group_ids}}
       ]
     end
 
