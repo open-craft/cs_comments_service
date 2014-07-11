@@ -78,6 +78,20 @@ describe "app" do
           assert_response_contains((0..29).find_all {|i| i % 5 == 0 || i % 5 == 1})
         end
 
+        it "by group_ids" do
+          get "/api/v1/search/threads", text: "text", group_ids: "1,2"
+          expected_ids = (0..29).find_all {|i| i % 5 == 0 || i % 5 == 1}
+          expected_ids.concat((0..29).find_all {|i| i % 5 == 2})
+          assert_response_contains(expected_ids)
+        end
+
+        it "by group_id and group_ids" do
+          get "/api/v1/search/threads", text: "text", group_id: "1", group_ids: "2"
+          expected_ids = (0..29).find_all {|i| i % 5 == 0 || i % 5 == 1}
+          expected_ids += (0..29).find_all {|i| i % 5 == 2}
+          assert_response_contains(expected_ids)
+        end
+
         it "by all filters combined" do
           get "/api/v1/search/threads", text: "text", course_id: "test/course/id0", commentable_id: "commentable0", group_id: "1"
           assert_response_contains([0, 6])
