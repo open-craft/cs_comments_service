@@ -27,10 +27,13 @@ get "#{APIPREFIX}/search/threads" do
               filter :term, :commentable_id => local_params["commentable_id"] if local_params["commentable_id"]
               filter :terms, :commentable_id => local_params["commentable_ids"].split(",") if local_params["commentable_ids"]
               filter :term, :course_id => local_params["course_id"] if local_params["course_id"]
-              if local_params["group_id"]
+              group_ids = []
+              group_ids << local_params["group_id"] if local_params["group_id"]
+              group_ids.concat(local_params["group_ids"].split(",")) if local_params["group_ids"]
+              if not group_ids.empty?
                 filter :or, [
                   {:not => {:exists => {:field => :group_id}}},
-                  {:term => {:group_id => local_params["group_id"]}}
+                  {:terms => {:group_id => group_ids}}
                 ]
               end
             end
