@@ -2,6 +2,7 @@ require 'new_relic/agent/method_tracer'
 
 get "#{APIPREFIX}/search/threads" do
   local_params = params # Necessary for params to be available inside blocks
+  local_params['exclude_groups'] = value_to_boolean(local_params['exclude_groups'])
   sort_criteria = get_sort_criteria(local_params)
 
   search_text = local_params["text"]
@@ -30,7 +31,10 @@ get "#{APIPREFIX}/search/threads" do
               group_ids = []
               group_ids << local_params["group_id"] if local_params["group_id"]
               group_ids.concat(local_params["group_ids"].split(",")) if local_params["group_ids"]
-              if not group_ids.empty?
+              if local_params['exclude_groups']
+                filter :not, :exists => {:field => :group_id}
+              elsif not group_ids.empty?
+
                 filter :or, [
                   {:not => {:exists => {:field => :group_id}}},
                   {:terms => {:group_id => group_ids}}

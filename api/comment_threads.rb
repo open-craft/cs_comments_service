@@ -4,7 +4,10 @@ get "#{APIPREFIX}/threads" do # retrieve threads by course
   group_ids = []
   group_ids << params["group_id"].to_i if params["group_id"]
   group_ids.concat(params["group_ids"].split(",").map(&:to_i)) if params["group_ids"]
-  if not group_ids.empty?
+  exclude_groups = value_to_boolean(params['exclude_groups'])
+  if exclude_groups
+    threads = threads.where({"group_id" => {"$exists" => false}})
+  elsif not group_ids.empty?
     threads = threads.any_of(
       {:group_id.in => group_ids},
       {:group_id.exists => false},
