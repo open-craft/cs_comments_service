@@ -1,0 +1,7 @@
+hy-AM:
+  user_id_is_required: "Օգտագործողի id-ին պարտադիր է"
+  value_is_required: "Արժեքը պարտադիր է"
+  value_is_invalid: "Արժեքը սխալ է"
+  anonymous: "անանուն "
+  param_must_be_a_non_negative_number: "%{param} պետք է լինի ոչ բացասական թիվ"
+  param_must_be_a_number_greater_than_zero: "%{param} պետք է լինի զրոյից մեծ թիվ"

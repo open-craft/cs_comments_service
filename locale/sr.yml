@@ -1,0 +1,9 @@
+sr:
+  requested_object_not_found: "Traženi predmet nije pronađen."
+  user_id_is_required: "Potrebna je korisnička identifikacija."
+  source_type_must_be_user_thread_or_other: "Izvor mora biti \"korisnik\", \"nit\" ili \"drugo\""
+  value_is_required: "Unesite vrednost."
+  value_is_invalid: "Vrednost je nevažeća."
+  anonymous: "anonimno"
+  param_must_be_a_non_negative_number: "{parametar} mora biti pozitivan broj"
+  param_must_be_a_number_greater_than_zero: "{parametar} mora biti broj veći od nule"

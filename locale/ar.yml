@@ -1,0 +1,10 @@
+ar:
+  requested_object_not_found: "عذراً، لم يتم العثور على الصفحة المطلوبة. "
+  user_id_is_required: "يُرجى إدخال رمز المستخدم."
+  source_type_must_be_user_thread_or_other: "يجب أن يكون نوع المصدر ’مستخدم‘ أو ’موضوع‘ أو ’غير ذلك‘."
+  value_is_required: "هذه القيمة مطلوبة"
+  value_is_invalid: "هذة القيمة غير صحيحة"
+  anonymous: "مجهول"
+  blocked_content_with_body_hash: "محتوى محجوب بواسطة \"هاش\" %{hash} "
+  param_must_be_a_non_negative_number: "لا يجب أن يكون %{param} عدداً سالباً. "
+  param_must_be_a_number_greater_than_zero: "يجب أن يكون %{param} عدداً أكبر من صفر."

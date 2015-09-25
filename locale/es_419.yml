@@ -1,0 +1,10 @@
+es-419:
+  requested_object_not_found: "No se encontró el objeto solicitado"
+  user_id_is_required: "Se requiere la id del usuario"
+  source_type_must_be_user_thread_or_other: "El tipo de fuente debe ser 'usuario', 'discusión' u 'otro'"
+  value_is_required: "Valor requerido"
+  value_is_invalid: "Valor inválido"
+  anonymous: "anónimo"
+  blocked_content_with_body_hash: "Contenido bloqueado con el hash %{hash}"
+  param_must_be_a_non_negative_number: "%{param} debe ser un número no negativo"
+  param_must_be_a_number_greater_than_zero: "%{param} debe ser un número mayor que cero"

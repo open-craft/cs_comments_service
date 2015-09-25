@@ -1,0 +1,10 @@
+it-IT:
+  requested_object_not_found: "oggetto richiesto non trovato"
+  user_id_is_required: "È richiesto id del utente"
+  source_type_must_be_user_thread_or_other: "Il tipo di sorgente deve essere 'utente', 'argomento' o 'altro'"
+  value_is_required: "È richiesto un valore"
+  value_is_invalid: "Valore non valido"
+  anonymous: "anonimo"
+  blocked_content_with_body_hash: "contenuto con codice %{hash} bloccato"
+  param_must_be_a_non_negative_number: "%{param} dev'essere un numero non-negativo"
+  param_must_be_a_number_greater_than_zero: "%{param} dev'essere un numero maggiore di zero"

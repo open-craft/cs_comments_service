@@ -1,0 +1,8 @@
+sq:
+  requested_object_not_found: "objekti i kerkuar nuk u gjet"
+  user_id_is_required: "ID e perdoruesit është e detyrueshme"
+  value_is_required: "Vlera është e detyrushme"
+  value_is_invalid: "vlera nuk është valide"
+  anonymous: "anonim"
+  param_must_be_a_non_negative_number: "%{param} duhet të jetë numër jo negativ"
+  param_must_be_a_number_greater_than_zero: "%{param} mund te jetë numër më i madh se zero"

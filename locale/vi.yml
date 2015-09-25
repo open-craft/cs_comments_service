@@ -1,0 +1,8 @@
+vi:
+  requested_object_not_found: "không tìm thấy đối tượng được yêu cầu"
+  value_is_required: "Yêu cầu nhập giá trị"
+  value_is_invalid: "Giá trị bị vô hiệu"
+  anonymous: "ẩn danh"
+  blocked_content_with_body_hash: "Nội dung đã bị chặn %{hash}"
+  param_must_be_a_non_negative_number: "%{param} không được là số âm"
+  param_must_be_a_number_greater_than_zero: "%{param} phải là một số lớn hơn 0"

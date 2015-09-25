@@ -1,0 +1,7 @@
+zh-HK:
+  user_id_is_required: "必須填上使用者帳號"
+  value_is_required: "必須填上數值"
+  value_is_invalid: "數值無效"
+  anonymous: "匿名"
+  param_must_be_a_non_negative_number: "%{param} 不能少於零"
+  param_must_be_a_number_greater_than_zero: "%{param} 必須大於零"

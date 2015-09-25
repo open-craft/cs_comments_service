@@ -1,0 +1,10 @@
+bs:
+  requested_object_not_found: "zahtjevani objekat nije pronađen"
+  user_id_is_required: "Neophodan je ID korisnika"
+  source_type_must_be_user_thread_or_other: "Izvorni tip mora biti 'user', 'thread' ili 'other'"
+  value_is_required: "Neophodna je vrijednost"
+  value_is_invalid: "Vrijednost je netačna"
+  anonymous: "anoniman"
+  blocked_content_with_body_hash: "blokiran sadžaj sa hashem tijela %{hash}"
+  param_must_be_a_non_negative_number: "%{param} mora biti nenegativan broj"
+  param_must_be_a_number_greater_than_zero: "%{param} mora biti broj veći od nule"
