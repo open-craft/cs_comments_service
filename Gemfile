@@ -16,9 +16,9 @@ gem 'yajl-ruby'
 
 gem 'ampex'
 
-gem 'mongo'
-gem 'moped', "2.0.5"
-gem 'mongoid', ">=4.0.2"
+gem 'mongo', '~>2.1'
+gem 'mongoid', "~>5.0"
+gem 'bson', '~>3.1'
 gem 'bson_ext'
 
 gem 'delayed_job'
@@ -26,7 +26,7 @@ gem 'delayed_job_mongoid'#, :git => 'https://github.com/dementrock/delayed_job_m
 
 gem "enumerize"#, "~>0.8.0"
 gem 'mongoid-tree', :git => 'https://github.com/macdiesel/mongoid-tree'
-gem 'rs_voteable_mongo', :git => 'https://github.com/rs-pro/voteable_mongo.git'
+gem 'rs_voteable_mongo', :git => 'https://github.com/navneet35371/voteable_mongo.git'
 gem 'mongoid_magic_counter_cache' #, :git => 'https://github.com/dementrock/mongoid-magic-counter-cache.git'
 
 # gem 'kaminari', :require => 'kaminari/sinatra'
@@ -53,7 +53,7 @@ group :test do
 end
 
 gem 'newrelic_rpm'
-gem 'newrelic_moped'
+gem 'newrelic_mongodb', '0.1.2'
 gem 'unicorn'
 gem "rack-timeout", "0.1.0beta3"
 gem "i18n"

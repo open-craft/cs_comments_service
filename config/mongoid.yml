@@ -1,8 +1,9 @@
-common: &default_session
+common: &default_client
   options:
     write:
-     w: 1
-    read: primary
+      w: 1
+    read:
+      mode: :primary
     max_retries: <%= ENV['MONGOID_MAX_RETRIES'] || 1 %>
     retry_interval: <%= ENV['MONGOID_RETRY_INTERVAL'] || 0 %>
     timeout: <%= ENV['MONGOID_TIMEOUT'] || 0.5 %>
@@ -12,49 +13,50 @@ common_uri: &default_uri
   uri: <%= ENV['MONGOHQ_URL'] %>
 
 development:
-  sessions:
+  clients:
     default:
-      <<: *default_session
+      <<: *default_client
       database: cs_comments_service_development
       hosts:
         - localhost:27017
+
 test:
-  sessions:
+  clients:
     default:
-      <<: *default_session
+      <<: *default_client
       database: cs_comments_service_test
       hosts:
         - localhost:27017
 
 production:
-  sessions:
+  clients:
     default:
       <<: *default_uri
-      <<: *default_session
+      <<: *default_client
 
 edgeprod:
-  sessions:
+  clients:
     default:
       <<: *default_uri
-      <<: *default_session
+      <<: *default_client
 
 edgestage:
-  sessions:
+  clients:
     default:
       <<: *default_uri
-      <<: *default_session
+      <<: *default_client
 
 staging:
-  sessions:
+  clients:
     default:
       <<: *default_uri
-      <<: *default_session
+      <<: *default_client
 
 loadtest:
-  sessions:
+  clients:
     default:
       <<: *default_uri
-      <<: *default_session
+      <<: *default_client
 
 defaults: &defaults
   use_utc: false
