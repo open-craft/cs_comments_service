@@ -109,6 +109,8 @@ def get_threads(context, group_ids, local_params, search_text)
       local_params['user_id'],
       local_params['course_id'],
       group_ids,
+      value_to_boolean(local_params["author"]), #WARNING: This has not been tested yet because of indexing issues!
+      local_params["post_type"], #WARNING: This has not been tested yet because of indexing issues!
       value_to_boolean(local_params['flagged']),
       value_to_boolean(local_params['unread']),
       value_to_boolean(local_params['unanswered']),

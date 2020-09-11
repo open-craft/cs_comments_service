@@ -136,6 +136,8 @@ helpers do
     user_id,
     course_id,
     group_ids,
+    filter_author,
+    post_type,
     filter_flagged,
     filter_unread,
     filter_unanswered,
@@ -151,6 +153,14 @@ helpers do
       comment_threads = comment_threads.all_of(context_threads.selector, group_threads.selector)
     else
       comment_threads = context_threads
+    end
+
+    if user_id and filter_author
+      comment_threads = comment_threads.where({"author_id" => user_id})
+    end
+
+    if post_type
+      comment_threads = comment_threads.where({"thread_type" => post_type})
     end
 
     if filter_flagged
